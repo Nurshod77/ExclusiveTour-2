@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExclusiveTour.uz - Umra va Xalqaro Turlar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="./sticker.webp" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-kaaba"></i>
+                    <span class="logo-text">ExclusiveTour.uz</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#umra" class="nav-link">Umra</a></li>
+                    <li><a href="#tours" class="nav-link">Xalqaro Turlar</a></li>
+                    <li><a href="#services" class="nav-link">Xizmatlar</a></li>
+                    <li><a href="#about" class="nav-link">Biz haqimizda</a></li>
+                    <li><a href="#contact" class="nav-link">Aloqa</a></li>
+                </ul>
+                <button class="cta-btn" onclick="openBooking()">BUYURTMA BERISH</button>
+                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Muqaddas <span class="highlight">Umra</span> ziyorati<br>
+                        va <span class="highlight">Xalqaro</span> turlar
+                    </h1>
+                    <p class="hero-description">
+                        O'zbekistondan eng yaxshi narxlarda Umra ziyorati va dunyoning<br>
+                        eng go'zal joylariga sayohatlar uyushtirish bo'yicha mutaxassis kompaniya
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="primary-btn" onclick="scrollToSection('umra')">
+                            <i class="fas fa-kaaba"></i>
+                            UMRA PAKETLARI
+                        </button>
+                        <button class="secondary-btn" onclick="openModal('internationalModal')">
+                            <i class="fas fa-globe"></i>
+                            XALQARO TURLAR
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">5000+</span>
+                            <span class="stat-label">Mamnun mijozlar</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">7+</span>
+                            <span class="stat-label">Yillik tajriba</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Mamlakatlar</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-slider fade-in">
+                    <div class="slider-container">
+                        <img src="./photo_2025-08-15_00-28-21.jpg" alt="Sayohat 1" class="slider-img active">
+                        <img src="./rasm.jpg" alt="Sayohat 2" class="slider-img">
+                        <img src="./rasm2.jpg" alt="Sayohat 3" class="slider-img">
+                        <img src="./rasm6.jpg" alt="Sayohat 4" class="slider-img">
+                        <img src="./rasm4.jpg" alt="Sayohat 5" class="slider-img">
+                        <img src="./rasm7.jpg" alt="Sayohat 6" class="slider-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Bizning xizmatlarimiz</h2>
+                <p class="section-subtitle">Sizning sayohatingizni mukammal qilish uchun barcha kerakli xizmatlar</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" onclick="openModal('umraModal')">
+                    <div class="service-icon">
+                        <i class="fas fa-kaaba"></i>
+                    </div>
+                    <h3>Umra ziyorati</h3>
+                    <p>To'liq Umra paketlari: aviabilet, mehmonxona, transport, yo'lboshchi xizmati</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> VIP xizmat</span>
+                        <span><i class="fas fa-check"></i> Tajribali yo'lboshchi</span>
+                        <span><i class="fas fa-check"></i> 5 yulduzli mehmonxonalar</span>
+                    </div>
+                </div>
+                <div class="service-card" onclick="openModal('internationalModal')">
+                    <div class="service-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Xalqaro turlar</h3>
+                    <p>Dunyoning eng go'zal joylariga sayohatlar: Turkiya, Dubai, Singapur, Yaponiya</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> Eksklyuziv marshrutlar</span>
+                        <span><i class="fas fa-check"></i> Mahalliy gidlar</span>
+                        <span><i class="fas fa-check"></i> Guruh va individual</span>
+                    </div>
+                </div>
+                <div class="service-card" onclick="openModal('visaModal')">
+                    <div class="service-icon">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3>Viza xizmatlari</h3>
+                    <p>Barcha mamlakatlar uchun viza rasmiylashtirish va hujjatlar tayyorlash</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> Tez rasmiylashtirish</span>
+                        <span><i class="fas fa-check"></i> Hujjatlar tayyorlash</span>
+                        <span><i class="fas fa-check"></i> Konsultatsiya</span>
+                    </div>
+                </div>
+                <div class="service-card" onclick="openModal('hotelModal')">
+                    <div class="service-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>Mehmonxona bron</h3>
+                    <p>Dunyoning istalgan joyida eng yaxshi mehmonxonalarni bron qilish</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-check"></i> Eng yaxshi narxlar</span>
+                        <span><i class="fas fa-check"></i> Bekor qilish imkoniyati</span>
+                        <span><i class="fas fa-check"></i> 24/7 qo'llab-quvvatlash</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="about" class="about-section">
+        <div class="container2">
+            <h1 class="section-title">Biz haqimizda</h1>
+            <div class="about-content">
+                <div class="content-text fade-in">
+                    <p>
+                        <strong>Exclusivetour.uz</strong> — bu shunchaki sayyohlik agentligi emas, balki sizning unutilmas sarguzashtlaringizga hamroh bo'ladigan ishonchli do'stingizdir. Biz dunyoning barcha go'zal burchaklariga va muqaddas ziyoratgohlarga bo'lgan yo'lingizni eng yuqori darajada tashkil etishga kafolat beramiz.
+                    </p>
+                    <p>
+                        Biz o'z ishiga fidoyi, uzoq yillik tajribaga ega mutaxassislar jamoasidan iboratmiz. Har bir mijozimizning sayohati uning hayotidagi eng yorqin sahifalardan biriga aylanishi uchun bor kuchimiz bilan harakat qilamiz.
+                    </p>
+                </div>
+                <div class="image-slider fade-in">
+                    <div class="slider-container">
+                        <img src="./photo_2025-08-15_00-28-21.jpg" alt="Sayohat 1" class="slider-img active">
+                        <img src="./rasm.jpg" alt="Sayohat 2" class="slider-img">
+                        <img src="./rasm2.jpg" alt="Sayohat 3" class="slider-img">
+                        <img src="./rasm3.jpg" alt="Sayohat 4" class="slider-img">
+                        <img src="./rasm4.jpg" alt="Sayohat 5" class="slider-img">
+                        <img src="./rasm5.jpg" alt="Sayohat 6" class="slider-img">
+                    </div>
+                </div>
+            </div>
+
+            <div class="services-block">
+                <div class="service-item fade-in">
+                    <i class="fas fa-mosque"></i>
+                    <h3>Umra va Haj ziyorati</h3>
+                    <p>Muqaddas Makka va Madinaga bo'lgan safaringizni har jihatdan qulay va ko'ngil to'qligi bilan o'tkazishingiz uchun barcha sharoitlarni yaratamiz.</p>
+                </div>
+                <div class="service-item fade-in">
+                    <i class="fas fa-plane-departure"></i>
+                    <h3>Ajoyib turlar</h3>
+                    <p>Dunyoning eng maftunkor shaharlari, tarixiy obidalari va tabiat mo'jizalarini kashf eting. Biz sizning xohishingizga mos noyob yo'nalishlarni taklif etamiz.</p>
+                </div>
+                <div class="service-item fade-in">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Har doim siz bilan</h3>
+                    <p>Sayohatning boshidan oxirigacha biz doimiy aloqadamiz. Kutilmagan vaziyatlarda ham 24/7 rejimida sizning xizmatingizdamiz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Umra Packages Section -->
+    <section id="umra" class="umra-packages">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Umra paketlari</h2>
+                <p class="section-subtitle">Har xil imkoniyat va ehtiyojlar uchun mo'ljallangan paketlar</p>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-badge">MASHHUR</div>
+                    <div class="package-image">
+                        <img src="./rasm11.jpg" alt="Standart Umra">
+                    </div>
+                    <div class="package-content">
+                        <h3>Standart Umra</h3>
+                        <div class="package-price">
+                            <span class="price">$2,500</span>
+                            <span class="duration">14 kun</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Makka va Madina mehmonxonalari (4*)</li>
+                            <li><i class="fas fa-check"></i> Aviabiletlar (Qatar Airways)</li>
+                            <li><i class="fas fa-check"></i> Barcha transportlar</li>
+                            <li><i class="fas fa-check"></i> Tajribali yo'lboshchi</li>
+                            <li><i class="fas fa-check"></i> Ziyorat dasturi</li>
+                        </ul>
+                        <button class="package-btn" onclick="selectPackage('standard-umra')">TANLASH</button>
+                    </div>
+                </div>
+                <div class="package-card premium">
+                    <div class="package-badge">VIP</div>
+                    <div class="package-image">
+                        <img src="./rasm12.jpg" alt="VIP Umra">
+                    </div>
+                    <div class="package-content">
+                        <h3>VIP Umra</h3>
+                        <div class="package-price">
+                            <span class="price">$4,200</span>
+                            <span class="duration">14 kun</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Makka va Madina mehmonxonalari (5*)</li>
+                            <li><i class="fas fa-check"></i> Aviabiletlar (Business class)</li>
+                            <li><i class="fas fa-check"></i> VIP transport xizmati</li>
+                            <li><i class="fas fa-check"></i> Shaxsiy yo'lboshchi</li>
+                            <li><i class="fas fa-check"></i> Kengaytirilgan ziyorat</li>
+                            <li><i class="fas fa-check"></i> Maxsus ovqatlanish</li>
+                        </ul>
+                        <button class="package-btn" onclick="selectPackage('vip-umra')">TANLASH</button>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-badge">TEJAMKOR</div>
+                    <div class="package-image">
+                        <img src="./rasm13.jpg" alt="Ekonom Umra">
+                    </div>
+                    <div class="package-content">
+                        <h3>Ekonom Umra</h3>
+                        <div class="package-price">
+                            <span class="price">$1,800</span>
+                            <span class="duration">10 kun</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Makka va Madina mehmonxonalari (3*)</li>
+                            <li><i class="fas fa-check"></i> Aviabiletlar (Ekonom class)</li>
+                            <li><i class="fas fa-check"></i> Guruh transporti</li>
+                            <li><i class="fas fa-check"></i> Guruh yo'lboshchisi</li>
+                            <li><i class="fas fa-check"></i> Asosiy ziyorat joylari</li>
+                        </ul>
+                        <button class="package-btn" onclick="selectPackage('economy-umra')">TANLASH</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- International Tours Section -->
+    <section id="tours" class="international-tours">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Xalqaro turlar</h2>
+                <p class="section-subtitle">Dunyoning eng go'zal joylariga unutilmas sayohatlar</p>
+            </div>
+            <div class="tours-grid">
+                <div class="tour-card" onclick="viewTourDetails('turkey')">
+                    <div class="tour-image">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.wj20tJz7kR2L9G80P_WEjAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Turkiya turi">
+                        <div class="tour-overlay">
+                            <div class="tour-price">$899</div>
+                        </div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>Turkiya (Istanbul + Antalya)</h3>
+                        <div class="tour-details">
+                            <span><i class="fas fa-calendar"></i> 7 kun</span>
+                            <span><i class="fas fa-users"></i> Guruh</span>
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                        <p>Tarixiy Istanbul va quyoshli Antalya. Ayasofya, Topkapi saroyi, Kapadokiya...</p>
+                        <button class="tour-btn">BATAFSIL</button>
+                    </div>
+                </div>
+                <div class="tour-card" onclick="viewTourDetails('dubai')">
+                    <div class="tour-image">
+                        <img src="https://tse1.mm.bing.net/th/id/OIP.n1mlrPkGhYQwtYUTBitPGgHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Dubai turi">
+                        <div class="tour-overlay">
+                            <div class="tour-price">$1,299</div>
+                        </div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>Dubai + Abu Dhabi</h3>
+                        <div class="tour-details">
+                            <span><i class="fas fa-calendar"></i> 5 kun</span>
+                            <span><i class="fas fa-users"></i> Individual</span>
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                        <p>Zamonaviy Dubai va Abu Dhabi. Burj Khalifa, Palm Jumeirah, Sheikh Zayed masjidi...</p>
+                        <button class="tour-btn">BATAFSIL</button>
+                    </div>
+                </div>
+                <div class="tour-card" onclick="viewTourDetails('singapore')">
+                    <div class="tour-image">
+                        <img src="https://th.bing.com/th/id/R.ce9dd99c9da7f501e26e6d550a5ceaa6?rik=O5RnPBBLekOksw&pid=ImgRaw&r=0" alt="Singapur turi">
+                        <div class="tour-overlay">
+                            <div class="tour-price">$1,599</div>
+                        </div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>Singapur + Malayziya</h3>
+                        <div class="tour-details">
+                            <span><i class="fas fa-calendar"></i> 8 kun</span>
+                            <span><i class="fas fa-users"></i> Guruh</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <p>Osiyo gavhari Singapur va Kuala Lumpur. Marina Bay, Petronas Towers...</p>
+                        <button class="tour-btn">BATAFSIL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Biz bilan bog'laning</h2>
+                <p class="section-subtitle">Savollaringiz bo'lsa yoki buyurtma bermoqchi bo'lsangiz - biz bilan bog'laning</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Manzil</h4>
+                            <p>Toshkent sh., Yunusobod tumani,<br>Abdulla Qodiriy ko'chasi, 12-uy</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telefon</h4>
+                            <p>+998 71 123-45-67<br>+998 90 123-45-67</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@exclusivetour.uz<br>booking@exclusivetour.uz</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" onsubmit="submitContactForm(event)">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Ismingiz" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="Telefon raqamingiz" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email manzilingiz" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Xabaringiz" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        XABAR YUBORISH
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-kaaba"></i>
+                        <span class="logo-text">ExclusiveTour.uz</span>
+                    </div>
+                    <p>O'zbekistonning yetakchi sayohat agentligi. Umra ziyorati va xalqaro turlarda 7 yillik tajriba.</p>
+                    <img style="width: 120px;" src="./sticker.webp" alt="">
+                </div>
+                <div class="footer-section">
+                    <h4>Xizmatlar</h4>
+                    <ul>
+                        <li><a href="#umra">Umra ziyorati</a></li>
+                        <li><a href="#tours">Xalqaro turlar</a></li>
+                        <li><a href="#services">Viza xizmatlari</a></li>
+                        <li><a href="#contact">Mehmonxona bron</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ExclusiveTour.uz. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="internationalModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Xalqaro Turlar</h2>
+                <span class="close" onclick="closeModal('internationalModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Dunyoning eng go'zal joylariga sayohatlar</p>
+                
+                <div class="modal-section">
+                    <h3>Xizmatlar:</h3>
+                    <ul class="modal-list">
+                        <li><i class="fas fa-plane"></i> Aviabiletlar va transport</li>
+                        <li><i class="fas fa-hotel"></i> Mehmonxona bron qilish</li>
+                        <li><i class="fas fa-user-tie"></i> Mahalliy gid xizmatlari</li>
+                        <li><i class="fas fa-camera"></i> Ekskursiya dasturlari</li>
+                        <li><i class="fas fa-passport"></i> Viza rasmiylashtirish</li>
+                        <li><i class="fas fa-shield-alt"></i> Sug'urta xizmatlari</li>
+                        <li><i class="fas fa-users"></i> Guruh va individual turlar</li>
+                        <li><i class="fas fa-video"></i> Foto va video xizmatlar</li>
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Paketlar:</h3>
+                    <div class="modal-packages">
+                        <div class="modal-package">
+                            <h4><i class="fas fa-flag"></i> Turkiya turi</h4>
+                            <p>Istanbul + Antalya - 7 kun</p>
+                            <span class="package-price">$899</span>
+                        </div>
+                        <div class="modal-package">
+                            <h4><i class="fas fa-building"></i> Dubai turi</h4>
+                            <p>Dubai + Abu Dhabi - 5 kun</p>
+                            <span class="package-price">$1,299</span>
+                        </div>
+                        <div class="modal-package">
+                            <h4><i class="fas fa-city"></i> Singapur turi</h4>
+                            <p>Singapur + Malayziya - 8 kun</p>
+                            <span class="package-price">$1,599</span>
+                        </div>
+                        <div class="modal-package">
+                            <h4><i class="fas fa-temple-buddhist"></i> Tailand turi</h4>
+                            <p>Bangkok + Phuket - 10 kun</p>
+                            <span class="package-price">$1,199</span>
+                        </div>
+                        <div class="modal-package">
+                            <h4><i class="fas fa-mountain"></i> Yaponiya turi</h4>
+                            <p>Tokyo + Osaka - 12 kun</p>
+                            <span class="package-price">$2,199</span>
+                        </div>
+                        <div class="modal-package">
+                            <h4><i class="fas fa-landmark"></i> Yevropa turi</h4>
+                            <p>5 mamlakat - 14 kun</p>
+                            <span class="package-price">$2,899</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Qo'shimcha xizmatlar:</h3>
+                    <ul class="modal-list">
+                        <li><i class="fas fa-wifi"></i> Bepul WiFi va internet</li>
+                        <li><i class="fas fa-utensils"></i> Milliy taomlar bilan tanishish</li>
+                        <li><i class="fas fa-shopping-bag"></i> Shopping turlari</li>
+                        <li><i class="fas fa-spa"></i> Spa va dam olish xizmatlari</li>
+                        <li><i class="fas fa-car"></i> Aeroportdan olib ketish/kuzatib qo'yish</li>
+                        <li><i class="fas fa-headset"></i> 24/7 qo'llab-quvvatlash</li>
+                    </ul>
+                </div>
+
+                <button class="modal-cta-btn" onclick="openBooking()">BUYURTMA BERISH</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="umraModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Umra Ziyorati</h2>
+                <span class="close" onclick="closeModal('umraModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Muqaddas Umra ziyorati uchun to'liq xizmatlar</p>
+                
+                <div class="modal-section">
+                    <h3>Xizmatlar:</h3>
+                    <ul class="modal-list">
+                        <li><i class="fas fa-plane"></i> Aviabiletlar (Qatar Airways, Emirates)</li>
+                        <li><i class="fas fa-hotel"></i> Makka va Madina mehmonxonalari</li>
+                        <li><i class="fas fa-bus"></i> Barcha transport xizmatlari</li>
+                        <li><i class="fas fa-user-graduate"></i> Tajribali yo'lboshchi</li>
+                        <li><i class="fas fa-book"></i> Ziyorat dasturi va ta'lim</li>
+                        <li><i class="fas fa-utensils"></i> Halol ovqatlanish</li>
+                        <li><i class="fas fa-medical"></i> Tibbiy yordam</li>
+                        <li><i class="fas fa-phone"></i> 24/7 aloqa</li>
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Paketlar:</h3>
+                    <div class="modal-packages">
+                        <div class="modal-package">
+                            <h4><i class="fas fa-star"></i> Ekonom Umra</h4>
+                            <p>10 kun - 3* mehmonxonalar</p>
+                            <span class="package-price">$1,800</span>
+                        </div>
+                        <div class="modal-package">
+                            <h4><i class="fas fa-star"></i> Standart Umra</h4>
+                            <p>14 kun - 4* mehmonxonalar</p>
+                            <span class="package-price">$2,500</span>
+                        </div>
+                        <div class="modal-package">
+                            <h4><i class="fas fa-crown"></i> VIP Umra</h4>
+                            <p>14 kun - 5* mehmonxonalar</p>
+                            <span class="package-price">$4,200</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="modal-cta-btn" onclick="openBooking()">BUYURTMA BERISH</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Buyurtma berish</h2>
+                <span class="close" onclick="closeModal('bookingModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="bookingForm" onsubmit="submitBooking(event)">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="To'liq ismingiz" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="Telefon raqamingiz" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email manzilingiz" required>
+                    </div>
+                    <div class="form-group">
+                        <select name="package" required>
+                            <option value="">Paket turini tanlang</option>
+                            <option value="economy-umra">Ekonom Umra - $1,800</option>
+                            <option value="standard-umra">Standart Umra - $2,500</option>
+                            <option value="vip-umra">VIP Umra - $4,200</option>
+                            <option value="turkey">Turkiya turi - $899</option>
+                            <option value="dubai">Dubai turi - $1,299</option>
+                            <option value="singapore">Singapur turi - $1,599</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" name="date" placeholder="Sayohat sanasi" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="people" placeholder="Odamlar soni" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="notes" placeholder="Qo'shimcha ma'lumotlar" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-check"></i>
+                        BUYURTMA BERISH
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="notificationText"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

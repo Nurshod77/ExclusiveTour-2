@@ -12,7 +12,9 @@ function scrollToSection(sectionId) {
 // Mobile menu toggle
 function toggleMobileMenu() {
     const navMenu = document.getElementById('navMenu');
+    const ctaBtn = document.getElementById('ctaBtn')
     navMenu.classList.toggle('active');
+    ctaBtn.style.display = "none"
 }
 
 // Modal functions

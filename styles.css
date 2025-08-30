@@ -942,6 +942,9 @@ body {
     .mobile-menu-toggle {
         display: flex;
     }
+    .cta-btn {
+        display: none;
+    }
     
     .nav-menu {
         display: none;
@@ -1173,7 +1176,7 @@ body {
 }
 
 /* Responsive dizayn */
-@media (max-width: 768px) {
+@media (max-width: 568px) {
     .section-title {
         font-size: 2.5em;
     }

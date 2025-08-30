@@ -26,13 +26,26 @@
                     <li><a href="#contact" class="nav-link">Aloqa</a></li>
                 </ul>
                 <button id="ctaBtn" class="cta-btn" onclick="openBooking()">BUYURTMA BERISH</button>
-                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div onclick="toggleMobileMenu()" class="hamburger-menu">
+                    <div class="hamburger-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </nav>
         </div>
+
+        <ul class="mobile-menu" id="mobileMenu">
+            <li><a href="#umra" class="nav-link">Umra</a></li>
+            <li><a href="#tours" class="nav-link">Xalqaro Turlar</a></li>
+            <li><a href="#services" class="nav-link">Xizmatlar</a></li>
+            <li><a href="#about" class="nav-link">Biz haqimizda</a></li>
+            <li><a href="#contact" class="nav-link">Aloqa</a></li>s
+            <li>
+            <button id="ctaBtn" class="cta-btn" onclick="openBooking()">BUYURTMA BERISH</button>
+            </li>
+        </ul>        
     </header>
 
     <!-- Hero Section -->
@@ -45,7 +58,8 @@
                         Muqaddas <span class="highlight">Umra</span> ziyorati<br>
                         va <span class="highlight">Xalqaro</span> turlar
                     </h1>
-                    <p class="hero-description">
+                     <p class="hero-description">
+                    
                         O'zbekistondan eng yaxshi narxlarda Umra ziyorati va dunyoning<br>
                         eng go'zal joylariga sayohatlar uyushtirish bo'yicha mutaxassis kompaniya
                     </p>
@@ -74,16 +88,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="image-slider fade-in">
-                    <div class="slider-container">
-                        <img src="./photo_2025-08-15_00-28-21.jpg" alt="Sayohat 1" class="slider-img active">
-                        <img src="./rasm.jpg" alt="Sayohat 2" class="slider-img">
-                        <img src="./rasm2.jpg" alt="Sayohat 3" class="slider-img">
-                        <img src="./rasm6.jpg" alt="Sayohat 4" class="slider-img">
-                        <img src="./rasm4.jpg" alt="Sayohat 5" class="slider-img">
-                        <img src="./rasm7.jpg" alt="Sayohat 6" class="slider-img">
-                    </div>
-                </div>
+
+
+
+    <div class="container">
+        <div class="image-slider fade-in">
+            <div class="slider-container">
+                <img src="./photo_2025-08-15_00-28-21.jpg" alt="Sayohat 1" class="slider-img active">
+                <img src="./rasm.jpg" alt="Sayohat 2" class="slider-img sliderImgs">
+                <img src="./rasm2.jpg" alt="Sayohat 3" class="slider-img">
+                <img src="./rasm6.jpg" alt="Sayohat 4" class="slider-img">
+                <img src="./rasm4.jpg" alt="Sayohat 5" class="slider-img">
+                <img src="./rasm7.jpg" alt="Sayohat 6" class="slider-img">
+            </div>
+        </div>
+    </div>
+
+
             </div>
         </div>
     </section>

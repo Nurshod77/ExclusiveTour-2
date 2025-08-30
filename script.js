@@ -11,11 +11,16 @@ function scrollToSection(sectionId) {
 
 // Mobile menu toggle
 function toggleMobileMenu() {
-    const navMenu = document.getElementById('navMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
     const ctaBtn = document.getElementById('ctaBtn')
-    navMenu.classList.toggle('active');
-    ctaBtn.style.display = "none"
+    mobileMenu.classList.toggle('active');
 }
+
+ // Hamburger menyu
+const hamburgerBtn = document.querySelector('.hamburger-btn');
+hamburgerBtn.addEventListener('click', () => {
+hamburgerBtn.classList.toggle('open');
+});
 
 // Modal functions
 function openModal(modalId) {
@@ -37,6 +42,7 @@ function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
         modal.style.display = 'none';
+        ctaBtn.style.display = "block"
         document.body.style.overflow = 'auto';
     }
 }
@@ -322,4 +328,121 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Rasmlarni 5 soniyada bir almashtirishni boshlash
     setInterval(changeImage, 3000); // 3000 millisekund = 3 soniya
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+const images = document.querySelectorAll('.slider-img');
+const dots = document.querySelectorAll('.dot');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+const toggleBtn = document.getElementById('toggle-btn');
+const timerDisplay = document.getElementById('timer');
+
+let currentIndex = 0;
+let intervalId = null;
+let isPlaying = true;
+let timeLeft = 2.0;
+
+// Sliderni boshlash
+startSlider();
+
+// Oldingi rasm
+prevBtn.addEventListener('click', function() {
+showImage(currentIndex - 1);
+resetTimer();
+});
+
+// Keyingi rasm
+nextBtn.addEventListener('click', function() {
+showImage(currentIndex + 1);
+resetTimer();
+});
+
+// Play/Pause tugmasi
+toggleBtn.addEventListener('click', function() {
+if (isPlaying) {
+    pauseSlider();
+} else {
+    playSlider();
+}
+});
+
+// Nuqtalar orqali boshqarish
+dots.forEach(dot => {
+dot.addEventListener('click', function() {
+    const index = parseInt(this.getAttribute('data-index'));
+    showImage(index);
+    resetTimer();
+});
+});
+
+// Rasmni ko'rsatish funksiyasi
+function showImage(index) {
+// Indexni chegaralash
+if (index < 0) {
+    index = images.length - 1;
+} else if (index >= images.length) {
+    index = 0;
+}
+
+// Joriy rasmni yashirish
+images[currentIndex].classList.remove('active');
+dots[currentIndex].classList.remove('active');
+
+// Yangi rasmni ko'rsatish
+images[index].classList.add('active');
+dots[index].classList.add('active');
+
+currentIndex = index;
+}
+
+// Sliderni ishga tushirish
+function startSlider() {
+intervalId = setInterval(function() {
+    showImage(currentIndex + 1);
+    timeLeft = 2.0;
+    updateTimerDisplay();
+}, 2000);
+
+// Har 0.1 soniyada timer yangilanishi
+setInterval(function() {
+    if (isPlaying) {
+        timeLeft -= 0.1;
+        if (timeLeft < 0) timeLeft = 0;
+        updateTimerDisplay();
+    }
+}, 100);
+}
+
+// Timer yangilanishi
+function updateTimerDisplay() {
+timerDisplay.textContent = `Keyingi rasm: ${timeLeft.toFixed(1)} soniya`;
+}
+
+// Sliderni to'xtatish
+function pauseSlider() {
+clearInterval(intervalId);
+isPlaying = false;
+toggleBtn.innerHTML = '<i class="fas fa-play"></i> Davom ettirish';
+}
+
+// Sliderni davom ettirish
+function playSlider() {
+startSlider();
+isPlaying = true;
+toggleBtn.innerHTML = '<i class="fas fa-pause"></i> To\'xtatish';
+}
+
+// Timerni qayta ishga tushirish
+function resetTimer() {
+timeLeft = 2.0;
+updateTimerDisplay();
+
+if (isPlaying) {
+    clearInterval(intervalId);
+    startSlider();
+}
+}
 });
